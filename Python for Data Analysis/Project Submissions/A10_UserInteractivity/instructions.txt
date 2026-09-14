@@ -1,0 +1,90 @@
+You will write a program that keeps track of a baseball team stored in a .CSV file.
+The user will have options to add, edit and remove a player.
+The user will be able to edit the player name, jersey number, at bats, and hits.
+The user will be able to view the entire team in a nicely formatted way.
+The team view will also include the hitting percentage, which you will calculate (hits/atbats), rounded to 3 places.
+The team view will also include a number (1,2,3 etc.) for each player so that the user can pick a certain player to edit.
+The user will always be presented the team listing above the command input. 
+Every time the user adds, edits or deletes a player, the file should be updated.
+The data is stored in a .csv file. 
+
+** New stuff **
+I have provided 2 new read and write functions that work with a list of player objects. You do not need to change these.
+I have provided a player.py file with a Player class.
+You need to import the player class (from player import Player) into your baseball.py
+The Player init function takes name, jersey, atbats and hits and assign them to internal variables with the same name.
+The Player batting_average() function returns the batting average. If the atbats for a player is 0, return the value 0.
+display() shows the info for a player. You will need to re-format the output to match your output in the baseball.py
+All of the rest of your code needs to be modified so that instead of getting a list of dictionaries, each function takes a list of player objects and performs the edit, add or delete function on that.
+
+
+Players:
+Num     Name        Jersey      At Bats     Hits    Pct 
+1       Billy Joe   12          20          2       .100
+2       Sammy Simms 5           10          2       .200
+
+A - Add a player
+D - Delete a player
+E - Edit a player
+
+? A
+
+Adding a player.
+Player name? Tom Till
+Jersey number? 9
+At bats? 10
+Hits? 4
+
+Added player Tom Till
+
+Players:
+Num     Name        Jersey      At Bats     Hits    Pct 
+1       Billy Joe   12          20          2       .100
+2       Sammy Simms 5           10          2       .200
+3       Tom Till    9           10          4       .400
+
+A - Add a player
+D - Delete a player
+E - Edit a player
+Q - Quit
+
+? E
+
+Which player do you want to edit? 2
+
+Edit Sammy Simms
+
+New Name (Enter to keep the same)? 
+New Jersey (Enter to keep the same)?
+New At Bats (Enter to keep the same)? 20
+New Hits (Enter to keep the same)? 5
+
+Players:
+Num     Name        Jersey      At Bats     Hits    Pct 
+1       Billy Joe   12          20          2       .100
+2       Sammy Simms 5           20          5       .250
+3       Tom Till    9           10          4       .400
+
+A - Add a player
+D - Delete a player
+E - Edit a player
+Q - Quit
+
+? D
+
+Which player do you want to delete? 1
+
+Deleted Billy Joe
+
+Players:
+Num     Name        Jersey      At Bats     Hits    Pct 
+1       Sammy Simms 5           20          5       .250
+2       Tom Till    9           10          4       .400
+
+A - Add a player
+D - Delete a player
+E - Edit a player
+Q - Quit
+
+? Q
+

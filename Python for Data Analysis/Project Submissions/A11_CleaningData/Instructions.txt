@@ -1,0 +1,22 @@
+You will be processing some data.
+The data is a list of lists.
+Each inner list has 10 integers.
+Some of the integers are zero.
+We will consider the zeros to be missing data.
+
+Your job is to replace the zeros in each inner list with the average of the inner list calculated without the zeros.
+
+For each inner list, you will:
+Count the number of zeros so you can subtract this from the total numbers in the list.
+Calculate the non-zero average of the list. You will divide by the number returned above.
+Replace the zeros with the average for that list.
+Output the row elements and print the average after the elements.
+
+You are provided with functions you need to complete.
+Remove the pass statements and put in your code.
+Remember that lists are mutable, that is, your function can change the elements in the list.
+You do not need to re-calulate the average after replacing the zeros. It will not change.
+
+You will submit just the completed zeros.py file.
+
+CHALLENGE: Perform the same operations in under 15 lines of code! Good luck!

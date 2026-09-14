@@ -1,0 +1,1 @@
+Of the fifteen students in our class who submitted the final project, six students who chose to create and submit the "shortened" file for an extra credit challenge. Of those six, I was told I was the only one to have submitted functional code that correctly followed the challenge instructions. 
