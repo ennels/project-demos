@@ -18,6 +18,8 @@ Setup: `pip install -r requirements.txt`
 
 ## Data mining (AICC 170)
 
+| Lab | What it does | Techniques | Output |
+|---|---|---|---|
 | [Weather Station Analysis](data-mining/weather-station-analysis) | Seven analytical questions answered with hand-written SQL against MariaDB, visualized with seaborn — box, violin, regression, and grouped bar charts. Runs on SQLite with no setup. | SQL (GROUP BY, HAVING, aggregates), SQLAlchemy, seaborn | seven annotated charts |
 
 ## Python for data analysis (AICC 120)
