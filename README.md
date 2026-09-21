@@ -16,6 +16,10 @@ Setup: `pip install -r requirements.txt`
 | [Basic Linear Regression](machine-learning/Basic%20Linear%20Regression) | First regression lab — preview, IQR outlier check, missing-value handling, fit, and evaluate. | LinearRegression, train/test R², RMSE, MAE | plot, terminal output |
 | [Spotify Stats](machine-learning/Spotify%20Stats) | Preprocessing lab on Spotify track data: missing-value audit, ordinal / boolean / one-hot encoding, feature selection, train/test split, scaling. | pandas, get_dummies, StandardScaler | processed feature matrix |
 
+## Data mining (AICC 170)
+
+| [Weather Station Analysis](data-mining/weather-station-analysis) | Seven analytical questions answered with hand-written SQL against MariaDB, visualized with seaborn — box, violin, regression, and grouped bar charts. Runs on SQLite with no setup. | SQL (GROUP BY, HAVING, aggregates), SQLAlchemy, seaborn | seven annotated charts |
+
 ## Python for data analysis (AICC 120)
 
 | Assignment | What it does | Concepts |
