@@ -1,28 +1,28 @@
 # Weather Station Analysis
 
-AICC 170 · Introduction to Data Mining and Analytics · Spring 2026 (course final)
+AICC 170, Introduction to Data Mining and Analytics, Spring 2026 (course final)
 
-SQL-driven exploration of 18 months of monthly weather summaries from 20 stations across five U.S. regions. Every chart is fed by a hand-written query against a MariaDB table — no query code was provided — and the chart type for each question was chosen to satisfy stated requirements (e.g., "central tendency and spread must both be visible" → box plot, "outliers must be visible" → violin plot).
+The dataset has 18 months of monthly weather summaries from 20 stations across five U.S. regions. For our final, I answered seven questions about it. Each answer is a SQL query I wrote against a MariaDB table and a chart. The assignment set rules for some charts, like "central tendency and spread must both be visible," so I picked chart types to match. For example, that one became a box plot, and "outliers must be visible" became a violin plot.
 
 ## Workflow
 
-1. Loaded `weather_readings.csv` (360 rows, 17 columns) into MariaDB via DBeaver and verified the row count.
-2. Connected from Python with SQLAlchemy + PyMySQL.
-3. For each of seven questions: wrote the SQL, pulled results into pandas, plotted with seaborn, wrote a two-sentence interpretation.
+1. Loaded `weather_readings.csv` (360 rows, 17 columns) into MariaDB with DBeaver and checked the row count.
+2. Connected from Python with SQLAlchemy and PyMySQL.
+3. For each question I wrote the SQL, pulled the results into pandas, plotted them with seaborn, and wrote a two-sentence interpretation.
 
 ## Questions and findings
 
-| # | Question | SQL features | Chart | Finding |
+| # | Question | SQL used | Chart | What I found |
 |---|---|---|---|---|
-| 1 | Temperature distribution by region | raw rows | box plot | Southwest highest average; Southeast widest spread |
-| 2 | Precipitation by season | `AVG`, `GROUP BY`, manual season order | bar | Spring wettest by ~1 in over the driest season |
-| 3 | Temperature vs. AQI by station | `AVG` ×2, `GROUP BY` two columns | scatter + regression line, hue by region | Positive correlation overall; Southeast runs against it |
-| 4 | Wind speed by dominant weather | raw rows | violin | Snow has the highest typical wind and the widest variability |
-| 5 | Monthly humidity cycle | `GROUP BY month`, `ORDER BY` | line, relabeled x-axis | Peaks in November and February — not the summer peak I expected |
-| 6 | High-AQI events by region | `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY … DESC` | bar | Southwest ~44 events; consistent with wildfire season in an arid region |
-| 7 | Precipitation vs. visibility by station | `SUM` + `AVG`, `GROUP BY` | scatter + regression line | Strong negative correlation; Southeast stations are the extreme end |
+| 1 | Temperature distribution by region | raw rows | box plot | Southwest has the highest average; Southeast has the widest spread |
+| 2 | Precipitation by season | `AVG`, `GROUP BY`, manual season order | bar | Spring is the wettest, about 1 in more than the driest season |
+| 3 | Temperature vs. AQI by station | two `AVG`s, `GROUP BY` on two columns | scatter with regression line, colored by region | Positive correlation overall, but the Southeast goes the other way |
+| 4 | Wind speed by dominant weather | raw rows | violin | Snow has the highest typical wind speed and the most variation |
+| 5 | Monthly humidity cycle | `GROUP BY month`, `ORDER BY` | line, relabeled x-axis | Peaks in November and February. I expected a summer peak |
+| 6 | High-AQI events by region | `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY … DESC` | bar | Southwest has about 44 events, which fits wildfire season in a dry region |
+| 7 | Precipitation vs. visibility by station | `SUM` and `AVG`, `GROUP BY` | scatter with regression line | Strong negative correlation; Southeast stations sit at the far end |
 
-Plots are in `plots/`; the SQL for each chart is printed beneath it.
+All seven charts are in `plots/`. In the notebook, each chart has its SQL printed under it.
 
 ![Regional temperature distribution](plots/question_1.png)
 ![Temperature vs. air quality](plots/question_3.png)
@@ -30,15 +30,15 @@ Plots are in `plots/`; the SQL for each chart is printed beneath it.
 
 ## Run it
 
-The notebook connects to MariaDB if `MARIADB_USER`, `MARIADB_PASSWORD`, `MARIADB_HOST`, `MARIADB_PORT`, and `MARIADB_DB` are set. Otherwise it builds a local SQLite database from the CSV, so it runs with no setup:
+If `MARIADB_USER`, `MARIADB_PASSWORD`, `MARIADB_HOST`, `MARIADB_PORT`, and `MARIADB_DB` are set, the notebook connects to MariaDB. If they aren't, it builds a local SQLite database from the CSV, so it runs with no setup:
 
 ```
 pip install -r ../../requirements.txt
 jupyter notebook weather_analysis.ipynb
 ```
 
-The SQL is standard enough that both backends produce identical results.
+The queries are plain enough SQL that both databases give the same results.
 
 ## Stack
 
-Python · pandas · seaborn · matplotlib · SQLAlchemy · MariaDB (DBeaver) · SQLite fallback
+Python, pandas, seaborn, matplotlib, SQLAlchemy, MariaDB (through DBeaver)
