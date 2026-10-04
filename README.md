@@ -32,7 +32,7 @@ Preprocessing practice on Spotify track data. It covers finding missing values, 
 ## Data Mining (AICC 170)
 
 ### [Weather Station Analysis](data-mining/weather-station-analysis)
-Seven questions about weather station data. Each one gets its own SQL query (GROUP BY, HAVING, aggregates) and a seaborn chart: box, violin, regression, or grouped bar. I wrote it against MariaDB, but it also runs on SQLite with no setup.
+Answered seven questions about weather station data. Each one gets its own SQL query (GROUP BY, HAVING, aggregates) and a seaborn chart: box, violin, regression, or grouped bar. I wrote it against MariaDB, but should also run on SQLite with no setup.
 
 ## Python for Data Analysis (AICC 120)
 
