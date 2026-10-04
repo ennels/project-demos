@@ -1,37 +1,45 @@
 # project-demos
 
-Python coursework from the Artificial Intelligence & Cloud Computing AAS at the College of Western Idaho — AICC 210 (Machine Learning) and AICC 120 (Python for Data Analysis). Each folder is a self-contained lab with source, data, and output plots.
+Python labs from my AI & Cloud Computing AAS at the College of Western Idaho. Most of it comes from AICC 210 (Machine Learning). There's also a data mining project from AICC 170 and assignments from AICC 120 (Python for Data Analysis). Each folder has its own code, data, and plots, so every lab runs by itself.
 
-Setup: `pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
-## Machine learning (AICC 210)
+## Machine Learning (AICC 210)
 
-| Lab | What it does | Techniques | Results / output |
-|---|---|---|---|
-| [SVM — Wisconsin Breast Cancer](machine-learning/SVM) | Classifies tumors as malignant or benign using the two features most correlated with the target (worst concave points, worst perimeter). Trains linear and RBF-kernel SVMs and plots each decision boundary. | SVC, StandardScaler, stratified 80/20 split, confusion matrix, classification report | 95.6% linear / 96.5% RBF accuracy, 0.95 recall on malignant; boundary plots |
-| [MNIST — KNN classifier](machine-learning/MNIST) | Handwritten-digit classification on the full 70k MNIST set. Drops constant border pixels, grid-searches k and weighting with 3-fold CV, evaluates on the standard 10k test split. Includes a second lab (`ClassifyPerformance.py`) on logistic regression with stratified 5-fold CV, precision/recall curves, and a dummy-classifier baseline. | KNeighborsClassifier, GridSearchCV, LogisticRegression, StratifiedKFold | >97% test accuracy (k=4, distance weighting); confusion matrix, misclassified samples |
-| [Regression & Classification — "Triple Threat" lab](machine-learning/Regression%20%26%20Classification) | Three datasets in one lab: salary vs. experience and possum morphometrics (polynomial regression with cross-validated degree selection and correlation heatmaps), mushrooms (edible/poisonous classification, logistic regression vs. decision tree). | PolynomialFeatures pipelines, cross_val_score, LogisticRegression, DecisionTreeClassifier, seaborn | R² / RMSE per model; fit curves, correlation heatmaps, decision tree |
-| [Rakhi Sales](machine-learning/Rakhi%20Sales) | Polynomial regression predicting sales count from customer visits on Delhi Rakhi sales data, after cleaning and correlation analysis. | Polynomial regression, train/test R², RMSE, MAE | fit curve with equation, terminal metrics |
-| [Ice Cream Sales](machine-learning/Ice%20Cream%20Sales) | Refactors a polynomial-regression tutorial into one reusable function, then fits sales vs. temperature at degrees 1, 2, 10, and 20 to show under- and overfitting. | PolynomialFeatures + LinearRegression | fit curves per degree |
-| [Basic Linear Regression](machine-learning/Basic%20Linear%20Regression) | First regression lab — preview, IQR outlier check, missing-value handling, fit, and evaluate. | LinearRegression, train/test R², RMSE, MAE | plot, terminal output |
-| [Spotify Stats](machine-learning/Spotify%20Stats) | Preprocessing lab on Spotify track data: missing-value audit, ordinal / boolean / one-hot encoding, feature selection, train/test split, scaling. | pandas, get_dummies, StandardScaler | processed feature matrix |
+### [SVM: Wisconsin Breast Cancer](machine-learning/SVM)
+Predicts whether a tumor is malignant or benign. It uses the two features most correlated with the diagnosis, worst concave points and worst perimeter. I trained a linear SVM and an RBF SVM on a stratified 80/20 split and plotted both decision boundaries. Linear got 95.6% accuracy and RBF got 96.5%, with 0.95 recall on malignant cases.
 
-## Data mining (AICC 170)
+### [MNIST: KNN Classifier](machine-learning/MNIST)
+KNN on the full 70k MNIST set. I dropped the border pixels that never change, grid-searched k and the weighting with 3-fold CV, then tested on the standard 10k split. The best setup was k=4 with distance weighting, at just over 97%. The same folder has a second lab, `ClassifyPerformance.py`, which covers logistic regression with stratified 5-fold CV, precision/recall curves, and a dummy classifier as a baseline.
 
-| Lab | What it does | Techniques | Output |
-|---|---|---|---|
-| [Weather Station Analysis](data-mining/weather-station-analysis) | Seven analytical questions answered with hand-written SQL against MariaDB, visualized with seaborn — box, violin, regression, and grouped bar charts. Runs on SQLite with no setup. | SQL (GROUP BY, HAVING, aggregates), SQLAlchemy, seaborn | seven annotated charts |
+### [Regression & Classification ("Triple Threat")](machine-learning/Regression%20%26%20Classification)
+Three datasets in one lab. For salary vs. experience and the possum body measurements, I used polynomial regression and picked the degree with cross-validation. For the mushroom dataset (edible or poisonous), I compared logistic regression against a decision tree. It includes correlation heatmaps, fit curves, and the tree plot.
 
-## Python for data analysis (AICC 120)
+### [Rakhi Sales](machine-learning/Rakhi%20Sales)
+I cleaned the Delhi Rakhi sales data, checked correlations, and fit a polynomial regression that predicts sales from customer visits. The plot shows the fitted equation, and R², RMSE, and MAE print to the terminal.
 
-| Assignment | What it does | Concepts |
-|---|---|---|
-| [A11 — Cleaning Data](data-analysis/Project%20Submissions/A11_CleaningData) | Replaces zeros in a 10×10 matrix with each row's non-zero mean. Includes the extra-credit "shortened" version — the only working submission in the class. | List comprehensions, statistics, data cleaning |
-| [A10 — Baseball Manager](data-analysis/Project%20Submissions/A10_UserInteractivity) | Menu-driven CLI to add, edit, and delete players with batting average, persisted to CSV through a Player class. | File I/O, classes, input validation, CSV |
-| [A09 — Files & Exceptions](data-analysis/Project%20Submissions/A09_FilesAndExceptions) | Read and write user records in text and JSON with exception handling. | File I/O, JSON, try/except |
-| [A08 — Classes](data-analysis/Project%20Submissions/A08_Classes) | Employee and Manager classes with inheritance and test scripts. | OOP, inheritance |
-| [Misc scripts](data-analysis/Misc%20Scripts) | Fundamentals — lists, dicts, conditionals — plus a quiz appeal written as runnable code (full credit awarded). | Python basics |
+### [Ice Cream Sales](machine-learning/Ice%20Cream%20Sales)
+I rewrote a polynomial regression tutorial as a single reusable function. Then I fit sales vs. temperature at degrees 1, 2, 10, and 20 to show what underfitting and overfitting look like.
 
-## Status
+### [Basic Linear Regression](machine-learning/Basic%20Linear%20Regression)
+My first regression lab: preview the data, check for outliers with IQR, handle missing values, fit, and evaluate.
 
-Ongoing — new labs added each semester. Latest: SVM (Fall 2026).
+### [Spotify Stats](machine-learning/Spotify%20Stats)
+Preprocessing practice on Spotify track data. It covers finding missing values, ordinal/boolean/one-hot encoding, choosing features, splitting, and scaling.
+
+## Data Mining (AICC 170)
+
+### [Weather Station Analysis](data-mining/weather-station-analysis)
+Seven questions about weather station data. Each one gets its own SQL query (GROUP BY, HAVING, aggregates) and a seaborn chart: box, violin, regression, or grouped bar. I wrote it against MariaDB, but it also runs on SQLite with no setup.
+
+## Python for Data Analysis (AICC 120)
+
+- [A11: Cleaning Data](data-analysis/Project%20Submissions/A11_CleaningData). Replaces the zeros in a 10×10 matrix with each row's non-zero mean. It also has the extra-credit "shortened" version, which turned out to be the only one in the class that worked.
+- [A10: Baseball Manager](data-analysis/Project%20Submissions/A10_UserInteractivity). A menu-driven CLI for adding, editing, and deleting players and their batting averages. It uses a Player class and saves to CSV.
+- [A09: Files & Exceptions](data-analysis/Project%20Submissions/A09_FilesAndExceptions). Reads and writes user records as text and JSON, with exception handling.
+- [A08: Classes](data-analysis/Project%20Submissions/A08_Classes). Employee and Manager classes that use inheritance, plus test scripts.
+- [Misc Scripts](data-analysis/Misc%20Scripts). Basics like lists, dicts, and conditionals. Also a quiz appeal I wrote as runnable Python, which got me full credit.
+
+I add new labs every semester. The latest is the SVM lab from Fall 2026.
