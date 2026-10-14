@@ -33,9 +33,11 @@ All seven charts are in `plots/`. In the notebook, each chart has its SQL printe
 If `MARIADB_USER`, `MARIADB_PASSWORD`, `MARIADB_HOST`, `MARIADB_PORT`, and `MARIADB_DB` are set, the notebook connects to MariaDB. If they aren't, it builds a local SQLite database from the CSV, so it runs with no setup:
 
 ```
-pip install -r ../../requirements.txt
+pip install -r requirements.txt notebook
 jupyter notebook weather_analysis.ipynb
 ```
+
+Opening it in VS Code instead only needs `requirements.txt`. With uv: `uv run --with notebook jupyter notebook weather_analysis.ipynb`. To use MariaDB, also install `pymysql` (or `uv sync --extra mariadb`).
 
 The queries are plain enough SQL that both databases give the same results.
 

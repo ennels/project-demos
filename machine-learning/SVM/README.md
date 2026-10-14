@@ -41,8 +41,10 @@ Terminal output:
 ## Run
 
 ```
-pip install -r ../../requirements.txt
+pip install -r requirements.txt
 python "SVM Lab (Wisconsin Breast Cancer).py"
 ```
+
+Or with uv: `uv run "SVM Lab (Wisconsin Breast Cancer).py"`
 
 Dataset loads from `sklearn.datasets.load_breast_cancer()` — no download needed.

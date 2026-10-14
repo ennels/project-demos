@@ -1,0 +1,6 @@
+# Polynomial regression (salary, possum) and classification (mushrooms)
+# Install: pip install -r requirements.txt   (or with uv: uv sync)
+matplotlib>=3.8
+pandas>=2.1
+scikit-learn>=1.4
+seaborn>=0.13

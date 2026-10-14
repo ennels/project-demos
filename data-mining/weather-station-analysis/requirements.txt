@@ -1,0 +1,9 @@
+# SQL + seaborn analysis of weather station data (SQLite by default)
+# Install: pip install -r requirements.txt   (or with uv: uv sync)
+ipykernel>=6.29
+matplotlib>=3.8
+numpy>=1.26
+pandas>=2.1
+seaborn>=0.13
+sqlalchemy>=2.0
+# pymysql>=1.1    # only if using MariaDB instead of the default SQLite

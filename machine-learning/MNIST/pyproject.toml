@@ -1,0 +1,11 @@
+[project]
+name = "mnist-knn"
+version = "0.1.0"
+description = "KNN and logistic regression on MNIST"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scikit-learn>=1.4",
+]

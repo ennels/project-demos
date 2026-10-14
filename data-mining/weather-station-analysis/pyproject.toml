@@ -1,0 +1,17 @@
+[project]
+name = "weather-station-analysis"
+version = "0.1.0"
+description = "SQL + seaborn analysis of weather station data (SQLite by default)"
+requires-python = ">=3.10"
+dependencies = [
+    "ipykernel>=6.29",
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "seaborn>=0.13",
+    "sqlalchemy>=2.0",
+]
+
+[project.optional-dependencies]
+# only needed if you point the notebook at MariaDB instead of the default SQLite
+mariadb = ["pymysql>=1.1"]

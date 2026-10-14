@@ -1,0 +1,10 @@
+[project]
+name = "svm-breast-cancer"
+version = "0.1.0"
+description = "Linear vs. RBF SVM on the Wisconsin breast cancer dataset"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.8",
+    "pandas>=2.1",
+    "scikit-learn>=1.4",
+]

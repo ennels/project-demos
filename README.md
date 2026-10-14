@@ -1,10 +1,14 @@
 # project-demos
 
-Python labs from my AI & Cloud Computing AAS at the College of Western Idaho. Most of it comes from AICC 210 (Machine Learning). There's also a data mining project from AICC 170 and assignments from AICC 120 (Python for Data Analysis). Each folder has its own code, data, and plots, so every lab runs by itself.
+Python labs from my AI & Cloud Computing AAS at the College of Western Idaho. Most of it comes from AICC 210 (Machine Learning). There's also a data mining project from AICC 170 and assignments from AICC 120 (Python for Data Analysis). Each folder has its own code, data, plots, and dependency list, so every lab runs by itself and you only install what that lab uses.
 
 ```
+cd "machine-learning/SVM"
 pip install -r requirements.txt
+python "SVM Lab (Wisconsin Breast Cancer).py"
 ```
+
+With [uv](https://docs.astral.sh/uv/), `uv run "SVM Lab (Wisconsin Breast Cancer).py"` builds the lab's environment and runs it in one step. The AICC 120 assignments only use the standard library, so they need no installs.
 
 ## Machine Learning (AICC 210)
 

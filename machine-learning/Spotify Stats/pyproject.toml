@@ -1,0 +1,11 @@
+[project]
+name = "spotify-stats"
+version = "0.1.0"
+description = "Preprocessing practice on Spotify track data"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.8",
+    "pandas>=2.1",
+    "scikit-learn>=1.4",
+    "seaborn>=0.13",
+]
