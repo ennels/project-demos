@@ -5,7 +5,7 @@ from pathlib import Path
 import time
 import os
 from player import Player
-from fileIO2 import read_csv, write_csv
+from fileIO import read_csv, write_csv
 
 path = Path("players.csv")
 fieldnames_const = ['name', 'jersey', 'atbats', 'hits']

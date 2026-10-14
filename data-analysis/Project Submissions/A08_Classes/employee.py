@@ -5,7 +5,7 @@
 class Employee:
     '''A class to represent an employee.'''
 
-    def __init__(self, name, position, salary, bonus):
+    def __init__(self, name, position, salary, bonus=0):
         '''Initializes the employee with name, position, and salary.'''
 
         self.name = name

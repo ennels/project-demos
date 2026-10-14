@@ -2,7 +2,7 @@
 # Elijah Walker - AICC 120 Assignment 8 - Classes
 
 import random
-from employee import Manager, 
+from employee import Manager
 
 managers = [
     ("Sue Davis", "Manager", 27, 5.5),
